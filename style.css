@@ -4,45 +4,38 @@ body {
   padding: 20px;
   background: #f4f4f9;
 }
-
 h1 {
   text-align: center;
   color: #2F1F70;
   margin-bottom: 30px;
 }
-
 .row {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
 }
-
 .year-column {
   background: white;
   border-radius: 10px;
   padding: 15px;
-  min-width: 220px;
+  min-width: 260px;
   box-shadow: 0 0 5px rgba(0,0,0,0.1);
 }
-
 .year-column h2 {
   text-align: center;
   color: #654DC7;
   font-size: 1.1rem;
 }
-
 .cycle-block {
   margin: 15px 0;
 }
-
 .cycle-block h3 {
   font-size: 0.95rem;
   color: #2F1F70;
   margin-bottom: 8px;
   border-bottom: 1px solid #ddd;
 }
-
 .course {
   background: #2F1F70;
   color: white;
@@ -52,19 +45,15 @@ h1 {
   cursor: pointer;
   transition: 0.3s ease;
 }
-
 .course:hover {
   transform: scale(1.02);
 }
-
 .completed {
   background-color: #9E94C5;
 }
-
 .unlocked {
   background-color: #654DC7;
 }
-
 .blocked {
   background-color: #2F1F70;
 }
