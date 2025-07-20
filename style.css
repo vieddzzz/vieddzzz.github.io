@@ -1,59 +1,61 @@
 body {
   font-family: 'Segoe UI', sans-serif;
+  background: #f8f9fa;
   margin: 0;
   padding: 20px;
-  background: #f4f4f9;
 }
 h1 {
   text-align: center;
   color: #2F1F70;
   margin-bottom: 30px;
 }
-.row {
+.container {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-direction: row;
   gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 .year-column {
   background: white;
-  border-radius: 10px;
+  border-radius: 12px;
   padding: 15px;
-  min-width: 260px;
-  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  width: 250px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 .year-column h2 {
   text-align: center;
   color: #654DC7;
-  font-size: 1.1rem;
+  margin-bottom: 15px;
 }
 .cycle-block {
-  margin: 15px 0;
+  margin-bottom: 20px;
 }
 .cycle-block h3 {
-  font-size: 0.95rem;
+  font-size: 1rem;
   color: #2F1F70;
   margin-bottom: 8px;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 4px;
 }
 .course {
-  background: #2F1F70;
+  background-color: #2F1F70;
   color: white;
-  padding: 8px 12px;
+  padding: 8px 10px;
+  border-radius: 8px;
   margin: 5px 0;
-  border-radius: 10px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
   cursor: pointer;
-  transition: 0.3s ease;
 }
-.course:hover {
-  transform: scale(1.02);
-}
-.completed {
+.course.completed {
   background-color: #9E94C5;
 }
-.unlocked {
+.course.unlocked {
   background-color: #654DC7;
 }
-.blocked {
+.course.blocked {
   background-color: #2F1F70;
+}
+.course:hover {
+  transform: scale(1.03);
 }
