@@ -1,0 +1,45 @@
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #2F1F70;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+    padding: 20px;
+}
+
+.course {
+    padding: 15px;
+    border-radius: 12px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-align: center;
+    font-weight: bold;
+}
+
+.course:hover {
+    transform: scale(1.03);
+}
+
+.blocked {
+    background-color: #2F1F70;
+}
+
+.unlocked {
+    background-color: #654DC7;
+}
+
+.completed {
+    background-color: #9E94C5;
+}
