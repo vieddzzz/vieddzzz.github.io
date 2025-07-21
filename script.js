@@ -4,12 +4,19 @@ function render() {
   const grid = document.getElementById('curriculum-grid');
   grid.innerHTML = '';
 
+  const yearLabels = ['PRIMER AÑO', 'SEGUNDO AÑO', 'TERCER AÑO', 'CUARTO AÑO', 'QUINTO AÑO'];
+  const cycleLabels = [
+    'PRIMER CICLO', 'SEGUNDO CICLO', 'TERCER CICLO', 'CUARTO CICLO',
+    'QUINTO CICLO', 'SEXTO CICLO', 'SÉPTIMO CICLO', 'OCTAVO CICLO',
+    'NOVENO CICLO', 'DÉCIMO CICLO'
+  ];
+
   for (let i = 1; i <= 5; i++) {
     const yearColumn = document.createElement('div');
 
     const yearTitle = document.createElement('div');
     yearTitle.className = 'year-block';
-    yearTitle.textContent = ['PRIMER AÑO', 'SEGUNDO AÑO', 'TERCER AÑO', 'CUARTO AÑO', 'QUINTO AÑO'][i - 1];
+    yearTitle.textContent = yearLabels[i - 1];
     yearColumn.appendChild(yearTitle);
 
     const pair = document.createElement('div');
@@ -21,11 +28,7 @@ function render() {
       cycleBlock.className = 'cycle-block';
 
       const cycleTitle = document.createElement('h3');
-      cycleTitle.textContent = [
-        'PRIMER CICLO', 'SEGUNDO CICLO', 'TERCER CICLO', 'CUARTO CICLO',
-        'QUINTO CICLO', 'SEXTO CICLO', 'SÉPTIMO CICLO', 'OCTAVO CICLO',
-        'NOVENO CICLO', 'DÉCIMO CICLO'
-      ][section.cycle - 1];
+      cycleTitle.textContent = cycleLabels[section.cycle - 1];
       cycleBlock.appendChild(cycleTitle);
 
       section.courses.forEach(course => {
