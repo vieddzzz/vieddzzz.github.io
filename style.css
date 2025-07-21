@@ -16,11 +16,15 @@ h1 {
   padding: 0 20px;
 }
 .year-block {
-  text-align: center;
-  color: #654DC7;
+  background-color: #C8C3D9;
+  border: 2px solid #2F1F70;
+  border-radius: 8px;
+  padding: 10px;
+  color: #2F1F70;
   font-weight: bold;
   font-size: 1.2em;
   margin-bottom: 10px;
+  text-align: center;
 }
 .cycle-pair {
   display: flex;
@@ -60,15 +64,4 @@ h1 {
 }
 .course:hover {
   transform: scale(1.03);
-}
-.year-block {
-  background-color: #C8C3D9;
-  border: 2px solid #2F1F70;
-  border-radius: 8px;
-  padding: 10px;
-  color: #2F1F70;
-  font-weight: bold;
-  font-size: 1.2em;
-  margin-bottom: 10px;
-  text-align: center;
 }
