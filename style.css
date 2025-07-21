@@ -4,17 +4,20 @@ body {
   margin: 0;
   padding: 20px;
 }
+
 h1 {
   text-align: center;
   color: #2F1F70;
   margin-bottom: 30px;
 }
+
 .grid-container {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 20px;
   padding: 0 20px;
 }
+
 .year-block {
   background-color: #C8C3D9;
   border: 2px solid #2F1F70;
@@ -26,15 +29,24 @@ h1 {
   margin-bottom: 10px;
   text-align: center;
 }
+
+/* BLOQUE de ciclos con fondo y borde */
 .cycle-pair {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   gap: 10px;
+  background-color: #C8C3D9;
+  border: 2px solid #2F1F70;
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 20px;
 }
+
 .cycle-block {
   flex: 1;
 }
+
 .cycle-block h3 {
   font-size: 1rem;
   color: #2F1F70;
@@ -43,6 +55,7 @@ h1 {
   padding-bottom: 4px;
   text-align: center;
 }
+
 .course {
   background-color: #2F1F70;
   color: white;
@@ -53,15 +66,19 @@ h1 {
   cursor: pointer;
   text-align: center;
 }
+
 .course.completed {
   background-color: #9E94C5;
 }
+
 .course.unlocked {
   background-color: #654DC7;
 }
+
 .course.blocked {
   background-color: #2F1F70;
 }
+
 .course:hover {
   transform: scale(1.03);
 }
