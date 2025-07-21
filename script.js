@@ -1,19 +1,23 @@
 const state = JSON.parse(localStorage.getItem('courseState') || '{}');
 
 function render() {
+  const container = document.getElementById('curriculum');
+  container.innerHTML = '';
   for (let i = 1; i <= 5; i++) {
-    const yearCol = document.getElementById('year-' + i);
-    yearCol.innerHTML = '';
-    const yearData = courseStructure.filter(c => c.year === i);
+    const yearBlock = document.createElement('div');
+    yearBlock.className = 'year-block';
     const title = document.createElement('h2');
-    title.textContent = `Año ${i}`;
-    yearCol.appendChild(title);
+    title.textContent = `AÑO ${i}`;
+    yearBlock.appendChild(title);
 
+    const cyclesDiv = document.createElement('div');
+    cyclesDiv.className = 'cycles-container';
+    const yearData = courseStructure.filter(c => c.year === i);
     yearData.forEach(section => {
       const cycleBlock = document.createElement('div');
       cycleBlock.className = 'cycle-block';
       const cycleTitle = document.createElement('h3');
-      cycleTitle.textContent = `Ciclo ${section.cycle}`;
+      cycleTitle.textContent = `CICLO ${section.cycle}`;
       cycleBlock.appendChild(cycleTitle);
 
       section.courses.forEach(course => {
@@ -39,8 +43,11 @@ function render() {
         cycleBlock.appendChild(div);
       });
 
-      yearCol.appendChild(cycleBlock);
+      cyclesDiv.appendChild(cycleBlock);
     });
+
+    yearBlock.appendChild(cyclesDiv);
+    container.appendChild(yearBlock);
   }
 }
 
