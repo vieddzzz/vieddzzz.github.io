@@ -1,23 +1,31 @@
 const state = JSON.parse(localStorage.getItem('courseState') || '{}');
 
 function render() {
-  const container = document.getElementById('curriculum');
-  container.innerHTML = '';
-  for (let i = 1; i <= 5; i++) {
-    const yearBlock = document.createElement('div');
-    yearBlock.className = 'year-block';
-    const title = document.createElement('h2');
-    title.textContent = `AÑO ${i}`;
-    yearBlock.appendChild(title);
+  const grid = document.getElementById('curriculum-grid');
+  grid.innerHTML = '';
 
-    const cyclesDiv = document.createElement('div');
-    cyclesDiv.className = 'cycles-container';
-    const yearData = courseStructure.filter(c => c.year === i);
-    yearData.forEach(section => {
+  for (let i = 1; i <= 5; i++) {
+    const yearColumn = document.createElement('div');
+
+    const yearTitle = document.createElement('div');
+    yearTitle.className = 'year-block';
+    yearTitle.textContent = ['PRIMER AÑO', 'SEGUNDO AÑO', 'TERCER AÑO', 'CUARTO AÑO', 'QUINTO AÑO'][i - 1];
+    yearColumn.appendChild(yearTitle);
+
+    const pair = document.createElement('div');
+    pair.className = 'cycle-pair';
+
+    const cycles = courseStructure.filter(c => c.year === i);
+    cycles.forEach(section => {
       const cycleBlock = document.createElement('div');
       cycleBlock.className = 'cycle-block';
+
       const cycleTitle = document.createElement('h3');
-      cycleTitle.textContent = `CICLO ${section.cycle}`;
+      cycleTitle.textContent = [
+        'PRIMER CICLO', 'SEGUNDO CICLO', 'TERCER CICLO', 'CUARTO CICLO',
+        'QUINTO CICLO', 'SEXTO CICLO', 'SÉPTIMO CICLO', 'OCTAVO CICLO',
+        'NOVENO CICLO', 'DÉCIMO CICLO'
+      ][section.cycle - 1];
       cycleBlock.appendChild(cycleTitle);
 
       section.courses.forEach(course => {
@@ -43,11 +51,11 @@ function render() {
         cycleBlock.appendChild(div);
       });
 
-      cyclesDiv.appendChild(cycleBlock);
+      pair.appendChild(cycleBlock);
     });
 
-    yearBlock.appendChild(cyclesDiv);
-    container.appendChild(yearBlock);
+    yearColumn.appendChild(pair);
+    grid.appendChild(yearColumn);
   }
 }
 
